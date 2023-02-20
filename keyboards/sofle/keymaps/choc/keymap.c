@@ -41,11 +41,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [_QWERTY] = LAYOUT( \
-  KC_GRV,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                     KC_6,     KC_7,     KC_8,    KC_9,   KC_0,    KC_GRV, \
-  KC_ESC,   KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                     KC_Y,     KC_U,     KC_I,    KC_O,   KC_P,    KC_BSPC, \
-  KC_TAB,   KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                     KC_H,     KC_J,     KC_K,    KC_L,   KC_SCLN, KC_QUOT, \
+  KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                     KC_6,     KC_7,     KC_8,    KC_9,   KC_0,    KC_GRV, \
+  KC_TAB,   KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                     KC_Y,     KC_U,     KC_I,    KC_O,   KC_P,    KC_BSPC, \
+  KC_CAPSLOCK,   KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                     KC_H,     KC_J,     KC_K,    KC_L,   KC_SCLN, KC_QUOT, \
   KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B, KC_MUTE,   XXXXXXX, KC_N,     KC_M,     KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, \
-                 KC_LGUI,KC_LALT,KC_LCTRL, KC_LOWER, KC_ENT,    KC_SPC,  KC_RAISE, KC_RCTRL, KC_RALT, KC_RGUI \
+                 KC_LGUI, KC_LCTRL, LT(_LOWER, KC_BSPC), LT(_RAISE, KC_SPC), KC_ENT,    KC_ENT, LT(_LOWER, KC_SPC),  KC_RALT,  KC_MINS, KC_EQL \
 ),
 /*
  * COLEMAK
@@ -64,11 +64,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [_COLEMAK] = LAYOUT( \
-  KC_GRV,   KC_1,   KC_2,    KC_3,    KC_4,     KC_5,                        KC_6,    KC_7, KC_8,    KC_9,   KC_0,    KC_GRV,  \
-  KC_ESC,   KC_Q,   KC_W,    KC_F,    KC_P,     KC_G,                        KC_J,    KC_L, KC_U,    KC_Y,   KC_SCLN, KC_BSPC, \
-  KC_TAB,   KC_A,   KC_R,    KC_S,    KC_T,     KC_D,                        KC_H,    KC_N, KC_E,    KC_I,   KC_O,    KC_QUOT, \
+  KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,     KC_5,                        KC_6,    KC_7, KC_8,    KC_9,   KC_0,    KC_GRV,  \
+  KC_TAB,   KC_Q,   KC_W,    KC_F,    KC_P,     KC_G,                        KC_J,    KC_L, KC_U,    KC_Y,   KC_SCLN, KC_BSPC, \
+  KC_CAPSLOCK,   KC_A,   KC_R,    KC_S,    KC_T,     KC_D,                        KC_H,    KC_N, KC_E,    KC_I,   KC_O,    KC_QUOT, \
   KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_V,     KC_B, KC_MUTE,      XXXXXXX, KC_K,    KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, \
-                 KC_LGUI, KC_LALT, KC_LCTRL, KC_LOWER, KC_ENT,      KC_SPC,  KC_RAISE,KC_RCTRL, KC_RALT, KC_RGUI \
+                 KC_LGUI, KC_LCTRL, KC_LCTRL, KC_LOWER, KC_ENT,      KC_SPC,  KC_RAISE, KC_RCTRL, KC_RALT, KC_RGUI \
 ),
 /* LOWER
  * ,-----------------------------------------.                    ,-----------------------------------------.
@@ -85,11 +85,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *            `----------------------------------'           '------''---------------------------'
  */
 [_LOWER] = LAYOUT( \
-  _______, KC_F1,   KC_F2,  KC_F3,   KC_F4,   KC_F5,                           KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,\
-  KC_GRV,  KC_1,    KC_2,   KC_3,    KC_4,    KC_5,                            KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_F12, \
-  _______, KC_EXLM, KC_AT,  KC_HASH, KC_DLR,  KC_PERC,                         KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PIPE, \
-  _______, KC_EQL, KC_MINS, KC_PLUS, KC_LCBR, KC_RCBR, _______,       _______, KC_LBRC, KC_RBRC, KC_SCLN, KC_COLN, KC_BSLS, _______, \
-                   _______, _______, _______, _______, _______,       _______, _______, _______, _______, _______\
+  KC_F11,  KC_F1,  KC_F2,  KC_F3,   KC_F4,   KC_F5,                           KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,\
+  KC_F12,  KC_GRV, KC_HOME,   KC_UP,    KC_END,    KC_PGUP,                        LCTL(KC_LEFT),    KC_HOME,    KC_ENTER, KC_END, LCTL(KC_RIGHT),   KC_BSLS, \
+  _______, KC_ESC, KC_LEFT,  KC_DOWN, KC_RIGHT,  KC_PGDN,                                   KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, LSFT(KC_SCLN), _______, \
+  _______, KC_0,   KC_DEL, KC_ENTER, LCTL(KC_LEFT), LCTL(KC_RIGHT), _______,       _______, KC_0, LSFT(KC_LBRC), LSFT(KC_RBRC), LSFT(KC_9), LSFT(KC_0), _______, \
+                   KC_F2,  LCTL(KC_U), _______, _______, _______,                    _______, _______, _______, KC_LBRC, KC_RBRC\
 ),
 /* RAISE
  * ,----------------------------------------.                    ,-----------------------------------------.
@@ -106,11 +106,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *            `----------------------------------'           '------''---------------------------'
  */
 [_RAISE] = LAYOUT( \
-  _______, _______, _______, _______, _______,  _______,                         _______, _______,  _______, _______,  _______ , _______, \
-  _______, KC_INS,  KC_PSCR, KC_APP,  XXXXXXX,  XXXXXXX,                         KC_PGUP, KC_PRVWD, KC_UP,   KC_NXTWD, KC_DLINE, KC_BSPC, \
-  _______, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,  KC_CAPS,                         KC_PGDN, KC_LEFT,  KC_DOWN, KC_RGHT,  KC_DEL,   KC_BSPC, \
-  _______, KC_UNDO, KC_CUT,  KC_COPY, KC_PASTE, XXXXXXX, _______,       _______, XXXXXXX, KC_LSTRT, XXXXXXX, KC_LEND,  XXXXXXX,  _______, \
-                    _______, _______, _______,  _______, _______,       _______, _______, _______,  _______, _______ \
+  _______, KC_MPLY, KC_VOLD, KC_VOLU, KC_MUTE,  _______,                         _______, _______,  _______, _______,  _______ , _______, \
+  _______, LSFT(KC_GRV),  KC_7, KC_8,  KC_9,  KC_CALC,                         KC_PGUP, KC_PRVWD, KC_UP,   KC_NXTWD, KC_DLINE, KC_BSPC, \
+  _______, KC_SLSH, KC_4, KC_5, KC_6,  KC_PAST,                         KC_PGDN, KC_LEFT,  KC_DOWN, KC_RGHT,  KC_DEL,   KC_BSPC, \
+  _______, KC_MINS, KC_1,  KC_2, KC_3, KC_PPLS, _______,       _______, XXXXXXX, KC_LSTRT, XXXXXXX, KC_LEND,  XXXXXXX,  _______, \
+                    KC_DOT, KC_0, _______,  _______, _______,       _______, _______, _______,  _______, _______ \
 ),
 /* ADJUST
  * ,-----------------------------------------.                    ,-----------------------------------------.
@@ -239,7 +239,9 @@ void oled_task_user(void) {
 
 #endif
 
+uint8_t mod_state;
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    mod_state = get_mods();
     switch (keycode) {
         case KC_QWERTY:
             if (record->event.pressed) {
@@ -396,6 +398,54 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 unregister_code(KC_Z);
             }
             return false;
+        case KC_ESC:
+            // Detect the activation of only Left Alt
+            if ( (get_mods() & MOD_BIT(KC_LSFT)) == MOD_BIT(KC_LSFT) || (get_mods() & MOD_BIT(KC_RSFT)) == MOD_BIT(KC_RSFT) ){
+                if (record->event.pressed) {
+                    // No need to register KC_LALT because it's already active.
+                    // The Alt modifier will apply on this KC_TAB.
+                    register_code(KC_GRV);
+                } else {
+                    unregister_code(KC_GRV);
+                }
+                // Do not let QMK process the keycode further
+                return false;
+            }
+            // Else, let QMK process the KC_ESC keycode as usual
+            return true;
+
+	case KC_BSPC:
+            {
+            // Initialize a boolean variable that keeps track
+            // of the delete key status: registered or not?
+            static bool delkey_registered;
+            if (record->event.pressed) {
+                // Detect the activation of either shift keys
+                if (mod_state & MOD_MASK_SHIFT) {
+                    // First temporarily canceling both shifts so that
+                    // shift isn't applied to the KC_DEL keycode
+                    del_mods(MOD_MASK_SHIFT);
+                    register_code(KC_DEL);
+                    // Update the boolean variable to reflect the status of KC_DEL
+                    delkey_registered = true;
+                    // Reapplying modifier state so that the held shift key(s)
+                    // still work even after having tapped the Backspace/Delete key.
+                    set_mods(mod_state);
+                    return false;
+                }
+            } else { // on release of KC_BSPC
+                // In case KC_DEL is still being sent even after the release of KC_BSPC
+                if (delkey_registered) {
+                    unregister_code(KC_DEL);
+                    delkey_registered = false;
+                    return false;
+                }
+            }
+            // Let QMK process the KC_BSPC keycode as usual outside of shift
+	    return true;
+	}
+
+
     }
     return true;
 }
