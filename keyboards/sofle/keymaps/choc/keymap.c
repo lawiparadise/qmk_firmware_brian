@@ -64,11 +64,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [_COLEMAK] = LAYOUT( \
-  _______,  _______,  KC_F10,  KC_F11,   KC_F12,     _______,                        KC_6,    KC_7, KC_8,    KC_9,   KC_0,    KC_GRV,  \
-  _______,  _______,  KC_F7,   KC_F8,    KC_F9,     KC_COMM,                        KC_J,    KC_L, KC_U,    KC_Y,   KC_SCLN, KC_BSPC, \
-  _______,  _______,  KC_F4,    KC_F5,    KC_F6,     KC_DOT,                        KC_H,    KC_N, KC_E,    KC_I,   KC_O,    KC_QUOT, \
-  _______,  KC_P1,  KC_P2,    KC_P3,    KC_P4,     KC_P5,  KC_MUTE,      XXXXXXX, KC_K,    KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, \
-                 KC_LGUI, KC_LCTRL, _______, _______, _______,      _______,  _______, _______, KC_RALT, KC_RGUI \
+  _______,  _______,  _______,  _______,  _______,  _______,                        KC_6,    KC_7, KC_8,    KC_9,   KC_0,    KC_GRV,  \
+  _______,  _______,  _______,  _______,  _______,  _______,                        KC_J,    KC_L, KC_U,    KC_Y,   KC_SCLN, KC_BSPC, \
+  _______,  KC_P6,  KC_P7,    KC_P8,    KC_P9,     KC_P0,                        KC_H,    KC_N, KC_E,    KC_I,   KC_O,    KC_QUOT, \
+  _______,  KC_P1,  KC_P2,    KC_P3,    KC_P4,     KC_P5,  _______,      XXXXXXX, KC_K,    KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, \
+                 _______, _______,  _______, _______, _______,      _______,  _______, _______, KC_RALT, KC_RGUI \
 ),
 /* LOWER
  * ,-----------------------------------------.                    ,-----------------------------------------.
